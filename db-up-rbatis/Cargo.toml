@@ -9,6 +9,8 @@ description = "Part of db-up. Contains driver implementations for Rbatis."
 categories = ["database"]
 keywords = ["database", "sql", "migrations", "orm", "rbatis"]
 repository = "https://github.com/nanobot248/db-up"
+homepage = "https://github.com/nanobot248/db-up"
+documentation = "https://docs.rs/refinery/latest/db-up-rbatis/"
 readme = "README.md"
 
 [dependencies.db-up]

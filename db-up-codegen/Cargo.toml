@@ -9,6 +9,8 @@ description = "Part of db-up. Contains the `migrations` macro for creating migra
 categories = ["database"]
 keywords = ["database", "sql", "migrations", "orm"]
 repository = "https://github.com/nanobot248/db-up"
+homepage = "https://github.com/nanobot248/db-up"
+documentation = "https://docs.rs/refinery/latest/db-up-codegen/"
 readme = "README.md"
 
 [lib]

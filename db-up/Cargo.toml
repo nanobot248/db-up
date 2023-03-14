@@ -9,6 +9,8 @@ description = "Main crate of the db-up project. Includes `migrations` macro and 
 categories = ["database"]
 keywords = ["database", "sql", "migrations", "orm"]
 repository = "https://github.com/nanobot248/db-up"
+homepage = "https://github.com/nanobot248/db-up"
+documentation = "https://docs.rs/refinery/latest/db-up/"
 readme = "README.md"
 
 [dependencies.db-up-codegen]

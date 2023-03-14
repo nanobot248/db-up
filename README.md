@@ -32,6 +32,8 @@ This crate has some known (and probably some unknown) limitations and stability 
     mode. I'm not sure if anyone will need the latter, but it i plan to implement it at some point.
   * The "last successful version" is not set correctly at many places, especially when producing
     errors.
+  * The `iter()` implementation for `ChangelogFile` is not conforming to the Rust standards
+    yet.
   * For now, there is only an Rbatis driver implementation available.
   * The Rbatis driver in `db-up-rbatis` uses one set of queries for all database drivers supported
     by Rbatis. As far as i can tell from e.g. `refinery`, some database systems (specifically MSSQL)
