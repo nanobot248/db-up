@@ -1,6 +1,6 @@
 [package]
 name = "db-up-codegen"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 license = "BSD-3-Clause"
 # license-file = "../LICENSE.txt"
@@ -10,7 +10,7 @@ categories = ["database"]
 keywords = ["database", "sql", "migrations", "orm"]
 repository = "https://github.com/nanobot248/db-up"
 homepage = "https://github.com/nanobot248/db-up"
-documentation = "https://docs.rs/refinery/latest/db-up-codegen/"
+documentation = "https://docs.rs/db-up-codegen/latest/db_up_codegen/"
 readme = "README.md"
 exclude = [
     "examples"
@@ -21,7 +21,7 @@ proc-macro = true
 
 [dependencies.db-up-sql-changelog]
 path = "../db-up-sql-changelog"
-version = "0.1.0"
+version = "0.2.0"
 
 [dependencies.syn]
 version = "1.0.98"

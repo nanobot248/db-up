@@ -190,7 +190,7 @@ dependencies = [
 
 [[package]]
 name = "db-up"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "async-trait",
  "db-up-codegen",
@@ -199,7 +199,7 @@ dependencies = [
 
 [[package]]
 name = "db-up-codegen"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "db-up-sql-changelog",
  "proc-macro2",
@@ -210,7 +210,7 @@ dependencies = [
 
 [[package]]
 name = "db-up-rbatis"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "async-trait",
  "db-up",
@@ -220,7 +220,7 @@ dependencies = [
 
 [[package]]
 name = "db-up-sql-changelog"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "serde",
  "serde_yaml",

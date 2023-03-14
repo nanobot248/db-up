@@ -1,6 +1,6 @@
 [package]
 name = "db-up-sql-changelog"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 license = "BSD-3-Clause"
 # license-file = "../LICENSE.txt"
@@ -10,7 +10,7 @@ categories = ["database"]
 keywords = ["database", "sql", "migrations", "orm"]
 repository = "https://github.com/nanobot248/db-up"
 homepage = "https://github.com/nanobot248/db-up"
-documentation = "https://docs.rs/refinery/latest/db-up-sql-changelog/"
+documentation = "https://docs.rs/db-up-sql-changelog/latest/db_up_sql_changelog/"
 readme = "README.md"
 exclude = [
     "examples"
