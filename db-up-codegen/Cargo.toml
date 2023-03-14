@@ -35,3 +35,4 @@ version = "1.0.40"
 
 [dependencies.serde]
 version = "1.0.152"
+features = ["derive"]

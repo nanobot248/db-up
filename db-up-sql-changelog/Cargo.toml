@@ -18,6 +18,7 @@ exclude = [
 
 [dependencies.serde]
 version = "1.0.152"
+features = ["derive"]
 
 [dependencies.serde_yaml]
 version = "0.9.17"
