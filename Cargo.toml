@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "db-up",
+    "db-up-codegen",
+    "db-up-sql-changelog",
+    "db-up-rbatis"
+]
+

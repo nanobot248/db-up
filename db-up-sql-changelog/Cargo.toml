@@ -1,0 +1,18 @@
+[package]
+name = "db-up-sql-changelog"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+# license-file = "../LICENSE.txt"
+authors = ["Andreas Hubert <nanobot248@gmail.com>"]
+description = "Part of db-up. Contains the ChangelogFile and corresponding iterator implementations."
+categories = ["database"]
+keywords = ["database", "sql", "migrations", "orm"]
+repository = "https://github.com/nanobot248/db-up"
+readme = "README.md"
+
+[dependencies.serde]
+version = "1.0.152"
+
+[dependencies.serde_yaml]
+version = "0.9.17"

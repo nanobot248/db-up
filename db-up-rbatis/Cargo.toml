@@ -1,0 +1,24 @@
+[package]
+name = "db-up-rbatis"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+# license-file = "../LICENSE.txt"
+authors = ["Andreas Hubert <nanobot248@gmail.com>"]
+description = "Part of db-up. Contains driver implementations for Rbatis."
+categories = ["database"]
+keywords = ["database", "sql", "migrations", "orm", "rbatis"]
+repository = "https://github.com/nanobot248/db-up"
+readme = "README.md"
+
+[dependencies.db-up]
+path = "../db-up"
+
+[dependencies.rbatis]
+version = "4.0.58"
+
+[dependencies.async-trait]
+version = "0.1.64"
+
+[dependencies.tokio]
+version = "1.26.0"

@@ -1,0 +1,21 @@
+[package]
+name = "db-up"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+# license-file = "../LICENSE.txt"
+authors = ["Andreas Hubert <nanobot248@gmail.com>"]
+description = "Main crate of the db-up project. Includes `migrations` macro and the `MigrationRunner`"
+categories = ["database"]
+keywords = ["database", "sql", "migrations", "orm"]
+repository = "https://github.com/nanobot248/db-up"
+readme = "README.md"
+
+[dependencies.db-up-codegen]
+path = "../db-up-codegen"
+
+[dependencies.db-up-sql-changelog]
+path = "../db-up-sql-changelog"
+
+[dependencies.async-trait]
+version = "0.1.64"

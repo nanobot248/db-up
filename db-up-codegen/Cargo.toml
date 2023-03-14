@@ -1,0 +1,31 @@
+[package]
+name = "db-up-codegen"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+# license-file = "../LICENSE.txt"
+authors = ["Andreas Hubert <nanobot248@gmail.com>"]
+description = "Part of db-up. Contains the `migrations` macro for creating migrations from a directory of SQL files."
+categories = ["database"]
+keywords = ["database", "sql", "migrations", "orm"]
+repository = "https://github.com/nanobot248/db-up"
+readme = "README.md"
+
+[lib]
+proc-macro = true
+
+[dependencies.db-up-sql-changelog]
+path = "../db-up-sql-changelog"
+
+[dependencies.syn]
+version = "1.0.98"
+features = [ "full" ]
+
+[dependencies.quote]
+version = "1.0.20"
+
+[dependencies.proc-macro2]
+version = "1.0.40"
+
+[dependencies.serde]
+version = "1.0.152"
