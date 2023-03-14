@@ -12,6 +12,9 @@ repository = "https://github.com/nanobot248/db-up"
 homepage = "https://github.com/nanobot248/db-up"
 documentation = "https://docs.rs/refinery/latest/db-up-sql-changelog/"
 readme = "README.md"
+exclude = [
+    "examples"
+]
 
 [dependencies.serde]
 version = "1.0.152"

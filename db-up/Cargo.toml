@@ -12,12 +12,17 @@ repository = "https://github.com/nanobot248/db-up"
 homepage = "https://github.com/nanobot248/db-up"
 documentation = "https://docs.rs/refinery/latest/db-up/"
 readme = "README.md"
+exclude = [
+    "examples"
+]
 
 [dependencies.db-up-codegen]
 path = "../db-up-codegen"
+version = "0.1.0"
 
 [dependencies.db-up-sql-changelog]
 path = "../db-up-sql-changelog"
+version = "0.1.0"
 
 [dependencies.async-trait]
 version = "0.1.64"

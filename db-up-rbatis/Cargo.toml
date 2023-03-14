@@ -12,9 +12,13 @@ repository = "https://github.com/nanobot248/db-up"
 homepage = "https://github.com/nanobot248/db-up"
 documentation = "https://docs.rs/refinery/latest/db-up-rbatis/"
 readme = "README.md"
+exclude = [
+    "examples"
+]
 
 [dependencies.db-up]
 path = "../db-up"
+version = "0.1.0"
 
 [dependencies.rbatis]
 version = "4.0.58"
