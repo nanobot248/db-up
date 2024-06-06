@@ -2,7 +2,7 @@ use std::cell::Cell;
 use std::sync::{Arc};
 use tokio::sync::Mutex;
 
-use rbatis::Rbatis;
+use rbatis::RBatis;
 use db_up::{MigrationExecutor, MigrationState, MigrationStateManager, MigrationsError, MigrationStatus};
 
 use async_trait::async_trait;
@@ -22,7 +22,7 @@ pub enum RbatisDbDriverType {
 
 /// Rbatis implementation of `MigrationStateManager` and `MigrationExecutor`
 pub struct RbatisMigrationDriver {
-    db: Arc<Rbatis>,
+    db: Arc<RBatis>,
     migrations_table_name: String,
     tx: Mutex<Cell<Option<RBatisTxExecutor>>>,
 }
@@ -33,7 +33,7 @@ impl RbatisMigrationDriver {
     ///  * `db`: The `Rbatis` instance for accessing the database
     ///  * `migrations_table_name`: The optional name of the table the migration state information
     ///    should be stored in. If `None`, the `DEFAULT_MIGRATIONS_TABLE` will be used.
-    pub fn new(db: Arc<Rbatis>, migrations_table_name: Option<&str>) -> RbatisMigrationDriver {
+    pub fn new(db: Arc<RBatis>, migrations_table_name: Option<&str>) -> RbatisMigrationDriver {
         return RbatisMigrationDriver {
             db: db.clone(),
             migrations_table_name: migrations_table_name.map(|v| v.to_string())
@@ -68,7 +68,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn prepare(&self) -> db_up::Result<()> {
         println!("preparing migrations table ...");
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
         let statement = format!(
@@ -87,7 +87,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn lowest_version(&self) -> db_up::Result<Option<MigrationState>> {
         println!("retrieving lowest version ... ");
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
         let version: Option<u32> = db.query_decode(format!("SELECT MIN(version) FROM {} WHERE status='deployed';",
@@ -106,7 +106,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn highest_version(&self) -> db_up::Result<Option<MigrationState>> {
         println!("retrieving highest version ... ");
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
         let version: Option<u32> = db.query_decode(format!("SELECT MAX(version) FROM {} WHERE status='deployed';",
@@ -125,7 +125,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn list_versions(&self) -> db_up::Result<Vec<MigrationState>> {
         println!("listing versions ... ");
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
         let versions: Vec<u32> = db.query_decode(format!("SELECT version FROM {} WHERE status='deployed' ORDER BY version asc;",
@@ -148,7 +148,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn begin_version(&self, version: u32) -> db_up::Result<()> {
         println!("beginning version ... {}", version);
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
         let update_statement = format!(r#"UPDATE {} SET status='in_progress' where version={};"#,
@@ -173,7 +173,7 @@ impl MigrationStateManager for RbatisMigrationDriver {
     async fn finish_version(&self, version: u32) -> db_up::Result<()> {
         println!("finishing version ... {}", version);
         let db = self.db.clone();
-        let mut db = db.acquire()
+        let db = db.acquire()
             .await
             .or_else(|err| Err(MigrationsError::migration_database_failed(None, Some(err.into()))))?;
 

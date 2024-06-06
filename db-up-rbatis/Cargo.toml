@@ -21,10 +21,10 @@ path = "../db-up"
 version = "0.2.0"
 
 [dependencies.rbatis]
-version = "4.0.58"
+version = "4.5.24"
 
 [dependencies.async-trait]
 version = "0.1.64"
 
 [dependencies.tokio]
-version = "1.26.0"
+version = "1.38.0"
