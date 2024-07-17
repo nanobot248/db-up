@@ -70,7 +70,7 @@ version = "<version>"
 ```rust
 use db_up::{MigrationExecutor, MigrationState, MigrationStateManager, MigrationStore, migrations, MigrationRunner};
 use db_up_rbatis::RbatisMigrationDriver;
-use rbatis::Rbatis;
+use rbatis::RBatis;
 
 // Load migrations (SQL files) from `examples/migrations` and make them available via
 // `Migrations::changelog()`. The generated class can be used for `MigrationRunner::migrate(...)`.
@@ -78,7 +78,7 @@ use rbatis::Rbatis;
 pub struct Migrations {
 }
 
-async fn run(rbatis: Arc<Rbatis>) -> Result<()> {
+async fn run(rbatis: Arc<RBatis>) -> Result<()> {
     let migration_driver = Arc::new(RbatisMigrationDriver::new(rbatis.clone(), None));
     let migration_runner = MigrationRunner::new(
         Migrations {},
